@@ -136,7 +136,9 @@ const didIWin = (proposition) => {
 //       "Trouvé en X tentative(s) !"
 
 const afficherVictoire = () => {
-  // Écris ton code ici
+  ecranJoueur2.classList.add("cache");
+  ecranVictoire.classList.remove("cache");
+  messageVictoire.textContent = `Trouvé en ${tentatives} tentative(s) !`;
 };
 
 // ── TODO 6 — Rejouer ────────────────────────────────────────────────
