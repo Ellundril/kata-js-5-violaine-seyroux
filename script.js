@@ -117,7 +117,15 @@ btnProposer.addEventListener("click", verifierProposition);
 //       affiche "📉 Plus petit !" dans messageFeedback
 
 const didIWin = (proposition) => {
-  // Écris ton code ici
+  if (proposition === nombreSecret) {
+    afficherVictoire();
+  }
+  if (proposition < nombreSecret) {
+    messageFeedback.textContent = "📈 Plus grand !";
+  }
+  if (proposition > nombreSecret) {
+    messageFeedback.textContent = "📉 Plus petit !";
+  }
 };
 
 // ── TODO 5 — Afficher la victoire ───────────────────────────────────
