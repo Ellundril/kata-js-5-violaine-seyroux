@@ -24,8 +24,8 @@ const ecranVictoire = document.getElementById("ecran-victoire");
 // Inputs et boutons :
 //   "input-secret"        "btn-valider-secret"
 //   "input-proposition"   "btn-proposer"        "btn-rejouer"
-const nbSecret = document.getElementById("input-secret");
-const btnValiderNbSecret = document.getElementById("btn-valider-secret");
+const inputSecret = document.getElementById("input-secret");
+const btnValiderSecret = document.getElementById("btn-valider-secret");
 const proposition = document.getElementById("input-proposition");
 const btnProposer = document.getElementById("btn-proposer");
 const btnRejouer = document.getElementById("btn-rejouer");
@@ -56,8 +56,23 @@ const messageVictoire = document.getElementById("message-victoire");
 // Branche ensuite cette fonction sur le clic de btnValiderSecret.
 
 const validerSecret = () => {
-  // Écris ton code ici
+  const secret = parseInt(inputSecret.value);
+  if (!secret || secret < 0 || secret > 50) {
+    erreurSecret.textContent =
+      "Le nombre choisi est invalide. Merci d'entrer un nombre secret compris entre 0 et 50.";
+    erreurSecret.classList.remove("cache");
+    return;
+  } else {
+    nombreSecret = secret;
+    ecranJoueur1.classList.add("cache");
+    ecranJoueur2.classList.remove("cache");
+    inputSecret.value = "";
+  }
 };
+
+btnValiderSecret.addEventListener("click", () => {
+  validerSecret();
+});
 
 // ── TODO 3 — Vérifier une proposition (joueur 2) ───────────────────
 // Écris une fonction verifierProposition() qui :
