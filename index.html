@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Devine le nombre</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+
+    <header class="app-header">
+      <span class="logo">🎲 Devine le nombre</span>
+    </header>
+
+    <main>
+
+      <!-- Écran joueur 1 : choisir le nombre secret -->
+      <section id="ecran-joueur1" class="ecran">
+        <h1>Joueur 1</h1>
+        <p class="instruction">Choisis un nombre secret entre <strong>0</strong> et <strong>50</strong>.</p>
+        <p class="instruction">Le joueur 2 ne doit pas regarder ! 🙈</p>
+        <div class="champ">
+          <input type="number" id="input-secret" min="0" max="50" placeholder="Ton nombre secret">
+        </div>
+        <button id="btn-valider-secret" class="btn-primary">Valider</button>
+        <p id="erreur-secret" class="erreur cache"></p>
+      </section>
+
+      <!-- Écran joueur 2 : deviner -->
+      <section id="ecran-joueur2" class="ecran cache">
+        <h1>Joueur 2</h1>
+        <p class="instruction">À toi de deviner !</p>
+        <p id="indice-range" class="range-hint">0 &lt; ? &lt; 50</p>
+        <div class="champ">
+          <input type="number" id="input-proposition" placeholder="Ta proposition">
+        </div>
+        <button id="btn-proposer" class="btn-primary">Valider</button>
+        <p id="erreur-proposition" class="erreur cache"></p>
+        <p id="message-feedback" class="feedback cache"></p>
+        <p id="compteur-tentatives" class="tentatives cache"></p>
+      </section>
+
+      <!-- Écran victoire -->
+      <section id="ecran-victoire" class="ecran cache">
+        <div class="victoire-card">
+          <span class="victoire-emoji">🎉</span>
+          <h1>Bravo !</h1>
+          <p id="message-victoire"></p>
+          <button id="btn-rejouer" class="btn-primary">Rejouer</button>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

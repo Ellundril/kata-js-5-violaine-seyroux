@@ -1,0 +1,155 @@
+/* ── Reset & base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:       #F7EAE4;
+  --rouge:    #C94530;
+  --violet:   #5B4FDC;
+  --noir:     #1A1A1A;
+  --blanc:    #FFFFFF;
+  --vert:     #3D9B6B;
+  --gris-txt: #4A4A4A;
+  --card-brd: #E8D0C8;
+}
+
+body {
+  font-family: "Barlow", "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--noir);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Layout ── */
+.app {
+  width: 100%;
+  max-width: 480px;
+  padding: 24px 20px 48px;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--rouge);
+  letter-spacing: .02em;
+}
+
+/* ── Écrans ── */
+.ecran {
+  background: var(--blanc);
+  border: 2px solid var(--card-brd);
+  border-radius: 12px;
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.ecran.cache { display: none; }
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--noir);
+}
+
+.instruction {
+  font-size: .95rem;
+  color: var(--gris-txt);
+  line-height: 1.6;
+}
+
+/* ── Champ ── */
+.champ { width: 100%; }
+
+input[type="number"] {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid var(--card-brd);
+  border-radius: 8px;
+  font-size: 1.1rem;
+  text-align: center;
+  color: var(--noir);
+  background: var(--bg);
+  transition: border-color .15s;
+  -moz-appearance: textfield;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
+input[type="number"]:focus {
+  outline: none;
+  border-color: var(--rouge);
+}
+
+/* ── Bouton ── */
+.btn-primary {
+  background: var(--rouge);
+  color: var(--blanc);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 32px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity .15s;
+  width: 100%;
+}
+.btn-primary:hover { opacity: .88; }
+.btn-primary:disabled { opacity: .4; cursor: not-allowed; }
+
+/* ── Messages ── */
+.erreur {
+  font-size: .88rem;
+  color: var(--rouge);
+  font-weight: 600;
+}
+
+.feedback {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--violet);
+}
+
+.tentatives {
+  font-size: .85rem;
+  color: var(--gris-txt);
+}
+
+.range-hint {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gris-txt);
+  letter-spacing: .04em;
+  background: var(--bg);
+  border: 2px solid var(--card-brd);
+  border-radius: 6px;
+  padding: 6px 20px;
+}
+
+.cache { display: none; }
+
+/* ── Écran victoire ── */
+.victoire-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.victoire-emoji {
+  font-size: 3.5rem;
+}
+
+#message-victoire {
+  font-size: .95rem;
+  color: var(--gris-txt);
+}
