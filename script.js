@@ -153,8 +153,21 @@ const afficherVictoire = () => {
 // Branche cette fonction sur le clic de btnRejouer.
 
 const rejouer = () => {
-  // Écris ton code ici
+  nombreSecret = null;
+  tentatives = 0;
+  rangeMin = 0;
+  rangeMax = 50;
+  inputProposition.value = "";
+  inputSecret.value = "";
+  ecranVictoire.classList.add("cache");
+  ecranJoueur2.classList.add("cache");
+  ecranJoueur1.classList.remove("cache");
+  indiceRange.textContent = "0 < ? < 50";
+  compteurTentatives.classList.add("cache");
+  messageFeedback.classList.add("cache");
 };
+
+btnRejouer.addEventListener("click", rejouer);
 
 // ── BONUS — Affiner le range ────────────────────────────────────────
 // Dans didIWin, quand la proposition n'est pas la bonne :
