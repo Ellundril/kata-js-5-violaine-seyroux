@@ -26,7 +26,7 @@ const ecranVictoire = document.getElementById("ecran-victoire");
 //   "input-proposition"   "btn-proposer"        "btn-rejouer"
 const inputSecret = document.getElementById("input-secret");
 const btnValiderSecret = document.getElementById("btn-valider-secret");
-const proposition = document.getElementById("input-proposition");
+const inputProposition = document.getElementById("input-proposition");
 const btnProposer = document.getElementById("btn-proposer");
 const btnRejouer = document.getElementById("btn-rejouer");
 // Affichage :
@@ -34,6 +34,7 @@ const btnRejouer = document.getElementById("btn-rejouer");
 //   "message-feedback"    "compteur-tentatives"
 //   "indice-range"        "message-victoire"
 const erreurSecret = document.getElementById("erreur-secret");
+const erreurProposition = document.getElementById("erreur-proposition");
 const messageFeedback = document.getElementById("message-feedback");
 const compteurTentatives = document.getElementById("compteur-tentatives");
 const indiceRange = document.getElementById("indice-range");
@@ -70,9 +71,7 @@ const validerSecret = () => {
   }
 };
 
-btnValiderSecret.addEventListener("click", () => {
-  validerSecret();
-});
+btnValiderSecret.addEventListener("click", validerSecret);
 
 // ── TODO 3 — Vérifier une proposition (joueur 2) ───────────────────
 // Écris une fonction verifierProposition() qui :
@@ -90,8 +89,23 @@ btnValiderSecret.addEventListener("click", () => {
 // Branche cette fonction sur le clic de btnProposer.
 
 const verifierProposition = () => {
-  // Écris ton code ici
+  const proposition = parseInt(inputProposition.value);
+  if (!proposition) {
+    erreurProposition.textContent = "Saisis un nombre !";
+    erreurProposition.classList.remove("cache");
+    return;
+  } else {
+    erreurProposition.classList.add("cache");
+    tentatives++;
+    compteurTentatives.textContent = `Tentative n°${tentatives}`;
+    compteurTentatives.classList.remove("cache");
+    messageFeedback.classList.remove("cache");
+    didIWin(proposition);
+    inputProposition.value = "";
+  }
 };
+
+btnProposer.addEventListener("click", verifierProposition);
 
 // ── TODO 4 — Logique de jeu ─────────────────────────────────────────
 // Écris une fonction didIWin(proposition) qui :
