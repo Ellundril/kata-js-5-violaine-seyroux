@@ -4,34 +4,41 @@
 //   Ton travail : compléter les TODOs dans l'ordre.
 // ════════════════════════════════════════════
 
-
 // ── État du jeu ─────────────────────────────
 // Ces variables sont partagées entre toutes les fonctions.
 // Ne pas les déplacer, ne pas les renommer.
 
-let nombreSecret    = null   // choisi par le joueur 1
-let tentatives      = 0      // nombre de propositions du joueur 2
-let rangeMin        = 0      // borne inférieure affichée
-let rangeMax        = 50     // borne supérieure affichée
-
+let nombreSecret = null; // choisi par le joueur 1
+let tentatives = 0; // nombre de propositions du joueur 2
+let rangeMin = 0; // borne inférieure affichée
+let rangeMax = 50; // borne supérieure affichée
 
 // ── TODO 1 — Sélectionner les éléments DOM ──────────────────────────
 // Récupère chacun des éléments suivants avec getElementById.
 //
 // Écrans :
 //   "ecran-joueur1"       "ecran-joueur2"       "ecran-victoire"
-//
+const ecranJoueur1 = document.getElementById("ecran-joueur1");
+const ecranJoueur2 = document.getElementById("ecran-joueur2");
+const ecranVictoire = document.getElementById("ecran-victoire");
 // Inputs et boutons :
 //   "input-secret"        "btn-valider-secret"
 //   "input-proposition"   "btn-proposer"        "btn-rejouer"
-//
+const nbSecret = document.getElementById("input-secret");
+const btnValiderNbSecret = document.getElementById("btn-valider-secret");
+const proposition = document.getElementById("input-proposition");
+const btnProposer = document.getElementById("btn-proposer");
+const btnRejouer = document.getElementById("btn-rejouer");
 // Affichage :
 //   "erreur-secret"       "erreur-proposition"
 //   "message-feedback"    "compteur-tentatives"
 //   "indice-range"        "message-victoire"
-
+const erreurSecret = document.getElementById("erreur-secret");
+const messageFeedback = document.getElementById("message-feedback");
+const compteurTentatives = document.getElementById("compteur-tentatives");
+const indiceRange = document.getElementById("indice-range");
+const messageVictoire = document.getElementById("message-victoire");
 // Écris tes déclarations ici :
-
 
 // ── TODO 2 — Valider le nombre secret (joueur 1) ────────────────────
 // Écris une fonction validerSecret() qui :
@@ -50,8 +57,7 @@ let rangeMax        = 50     // borne supérieure affichée
 
 const validerSecret = () => {
   // Écris ton code ici
-}
-
+};
 
 // ── TODO 3 — Vérifier une proposition (joueur 2) ───────────────────
 // Écris une fonction verifierProposition() qui :
@@ -70,8 +76,7 @@ const validerSecret = () => {
 
 const verifierProposition = () => {
   // Écris ton code ici
-}
-
+};
 
 // ── TODO 4 — Logique de jeu ─────────────────────────────────────────
 // Écris une fonction didIWin(proposition) qui :
@@ -84,8 +89,7 @@ const verifierProposition = () => {
 
 const didIWin = (proposition) => {
   // Écris ton code ici
-}
-
+};
 
 // ── TODO 5 — Afficher la victoire ───────────────────────────────────
 // Écris une fonction afficherVictoire() qui :
@@ -96,8 +100,7 @@ const didIWin = (proposition) => {
 
 const afficherVictoire = () => {
   // Écris ton code ici
-}
-
+};
 
 // ── TODO 6 — Rejouer ────────────────────────────────────────────────
 // Écris une fonction rejouer() qui remet tout à zéro :
@@ -112,8 +115,7 @@ const afficherVictoire = () => {
 
 const rejouer = () => {
   // Écris ton code ici
-}
-
+};
 
 // ── BONUS — Affiner le range ────────────────────────────────────────
 // Dans didIWin, quand la proposition n'est pas la bonne :

@@ -1,15 +1,21 @@
 /* ── Reset & base ── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 :root {
-  --bg:       #F7EAE4;
-  --rouge:    #C94530;
-  --violet:   #5B4FDC;
-  --noir:     #1A1A1A;
-  --blanc:    #FFFFFF;
-  --vert:     #3D9B6B;
-  --gris-txt: #4A4A4A;
-  --card-brd: #E8D0C8;
+  --bg: #f7eae4;
+  --rouge: #c94530;
+  --violet: #5b4fdc;
+  --noir: #1a1a1a;
+  --blanc: #ffffff;
+  --vert: #3d9b6b;
+  --gris-txt: #4a4a4a;
+  --card-brd: #e8d0c8;
 }
 
 body {
@@ -38,7 +44,7 @@ body {
   font-size: 1.4rem;
   font-weight: 700;
   color: var(--rouge);
-  letter-spacing: .02em;
+  letter-spacing: 0.02em;
 }
 
 /* ── Écrans ── */
@@ -54,7 +60,9 @@ body {
   text-align: center;
 }
 
-.ecran.cache { display: none; }
+.ecran.cache {
+  display: none;
+}
 
 h1 {
   font-size: 1.8rem;
@@ -63,13 +71,15 @@ h1 {
 }
 
 .instruction {
-  font-size: .95rem;
+  font-size: 0.95rem;
   color: var(--gris-txt);
   line-height: 1.6;
 }
 
 /* ── Champ ── */
-.champ { width: 100%; }
+.champ {
+  width: 100%;
+}
 
 input[type="number"] {
   width: 100%;
@@ -80,11 +90,13 @@ input[type="number"] {
   text-align: center;
   color: var(--noir);
   background: var(--bg);
-  transition: border-color .15s;
-  -moz-appearance: textfield;
+  transition: border-color 0.15s;
+  appearance: textfield;
 }
 input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
 input[type="number"]:focus {
   outline: none;
   border-color: var(--rouge);
@@ -100,15 +112,20 @@ input[type="number"]:focus {
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
-  transition: opacity .15s;
+  transition: opacity 0.15s;
   width: 100%;
 }
-.btn-primary:hover { opacity: .88; }
-.btn-primary:disabled { opacity: .4; cursor: not-allowed; }
+.btn-primary:hover {
+  opacity: 0.88;
+}
+.btn-primary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
 
 /* ── Messages ── */
 .erreur {
-  font-size: .88rem;
+  font-size: 0.88rem;
   color: var(--rouge);
   font-weight: 600;
 }
@@ -120,7 +137,7 @@ input[type="number"]:focus {
 }
 
 .tentatives {
-  font-size: .85rem;
+  font-size: 0.85rem;
   color: var(--gris-txt);
 }
 
@@ -128,14 +145,16 @@ input[type="number"]:focus {
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--gris-txt);
-  letter-spacing: .04em;
+  letter-spacing: 0.04em;
   background: var(--bg);
   border: 2px solid var(--card-brd);
   border-radius: 6px;
   padding: 6px 20px;
 }
 
-.cache { display: none; }
+.cache {
+  display: none;
+}
 
 /* ── Écran victoire ── */
 .victoire-card {
@@ -150,6 +169,6 @@ input[type="number"]:focus {
 }
 
 #message-victoire {
-  font-size: .95rem;
+  font-size: 0.95rem;
   color: var(--gris-txt);
 }
