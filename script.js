@@ -58,7 +58,7 @@ const messageVictoire = document.getElementById("message-victoire");
 
 const validerSecret = () => {
   const secret = parseInt(inputSecret.value);
-  if (!secret || secret < 0 || secret > 50) {
+  if (!secret || secret <= 0 || secret >= 50) {
     erreurSecret.textContent =
       "Le nombre choisi est invalide. Merci d'entrer un nombre secret compris entre 0 et 50.";
     erreurSecret.classList.remove("cache");
@@ -120,12 +120,15 @@ const didIWin = (proposition) => {
   if (proposition === nombreSecret) {
     afficherVictoire();
   }
-  if (proposition < nombreSecret) {
+  if (proposition < nombreSecret && proposition > rangeMin) {
     messageFeedback.textContent = "📈 Plus grand !";
+    rangeMin = proposition;
   }
-  if (proposition > nombreSecret) {
+  if (proposition > nombreSecret && proposition < rangeMax) {
     messageFeedback.textContent = "📉 Plus petit !";
+    rangeMax = proposition;
   }
+  indiceRange.textContent = `${rangeMin} < ? < ${rangeMax}`;
 };
 
 // ── TODO 5 — Afficher la victoire ───────────────────────────────────
